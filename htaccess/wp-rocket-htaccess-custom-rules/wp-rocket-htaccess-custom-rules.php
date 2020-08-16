@@ -24,10 +24,10 @@ defined( 'ABSPATH' ) or die();
  */
 function render_rewrite_rules( $marker ) {
 
-	$customHeaders  = '# Override default expires' . PHP_EOL;
+	$customHeaders  = '# Override text/html expires' . PHP_EOL;
 	$customHeaders  .= '<IfModule mod_expires.c>' . PHP_EOL;
 	$customHeaders  .= 'ExpiresActive on' . PHP_EOL;
-	$customHeaders  .= 'ExpiresDefault "access plus 0 seconds"' . PHP_EOL;
+	$customHeaders  .= 'ExpiresByType text/html "access plus 86400 seconds"' . PHP_EOL;
 	$customHeaders  .= '</IfModule>' . PHP_EOL;
 	$customHeaders  .= '# END Override default expires' . PHP_EOL . PHP_EOL;
 
